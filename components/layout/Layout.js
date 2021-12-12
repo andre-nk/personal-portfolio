@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Drawer from "./Drawer";
-import Navigation from "./Navigation";
+import Drawer from "../navigation/Drawer";
+import NavigationBar from "../navigation/NavigationBar";
 
 export default function Layout(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ export default function Layout(props) {
   return (
     <div className="">
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Navigation setIsOpen={setIsOpen} />
+      <NavigationBar setIsOpen={setIsOpen} />
       <div className="py-6">{props.children}</div>
     </div>
   );

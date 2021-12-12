@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Navigation({ setIsOpen }) {
+export default function NavigationBar({ setIsOpen }) {
   return (
     <nav className="w-full h-[8vh] bg-white px-6 py-[48px] flex justify-between items-center">
       <Link href="/">
@@ -9,7 +9,7 @@ export default function Navigation({ setIsOpen }) {
       </Link>
       <button
         onClick={() => setIsOpen(true)}
-        className="hover:bg-hover-white duration-200 rounded-lg px-[24px] py-[8px] border-[2.5px] border-primary-black font-medium text-primary-black text-[16px]">
+        className="hover:bg-hover-white duration-200 rounded-lg px-[24px] py-[7.25px] border-[2.5px] border-primary-black font-medium text-primary-black text-[16px]">
         Menu
       </button>
     </nav>

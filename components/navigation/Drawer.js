@@ -1,5 +1,5 @@
-import DrawerLinks from "./DrawerLinks";
-import MainButton from "./MainButton";
+import DrawerLinks from "../navigation/DrawerLinks";
+import MainButton from "../ui/MainButton";
 
 export default function Drawer({ isOpen, setIsOpen }) {
   return (

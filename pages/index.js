@@ -2,7 +2,10 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-import MainButton from "../components/MainButton";
+import MainButton from "../components/ui/MainButton";
+import SectionHeader from "../components/ui/SectionHeader";
+import ServiceList from "../components/layout/ServiceList";
+import ProjectList from "../components/layout/ProjectList";
 
 export default function Home() {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -37,6 +40,14 @@ export default function Home() {
           width={screenWidth}
           height={screenWidth * 0.9}
         />
+      </div>
+      <div className="px-6">
+        <SectionHeader title={"What do I do?"} subtitle={"MY SERVICES"} />
+        <ServiceList />
+      </div>
+      <div className="px-6">
+        <SectionHeader title={"Some of the best projects by me!"} subtitle={"FEATURED PROJECTS"} />
+        <ProjectList />
       </div>
     </div>
   );
