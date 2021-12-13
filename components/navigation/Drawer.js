@@ -27,8 +27,8 @@ export default function Drawer({ isOpen, setIsOpen }) {
         <div className="h-[3.5px] w-3/12 mt-4 bg-primary-black bg-opacity-30">
 
         </div>
-        <div className="space-y-7 mt-8">
-          <MainButton content={"Resume"} isInversed={true} />
+        <div className="space-y-6 mt-8">
+          <MainButton content={"My Resume"} isInversed={true} />
           <MainButton content={"Contact me"} />
         </div>
       </div>
