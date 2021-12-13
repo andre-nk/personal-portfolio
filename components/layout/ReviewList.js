@@ -10,7 +10,7 @@ export default function ReviewList() {
         }
       />
       <PlusPointCard
-        title={"5 stars average ratings"}
+        title={"Alexander Ziskind"}
         caption={
           "Good communication. Fast replies. Accommodating to requests."
         }
