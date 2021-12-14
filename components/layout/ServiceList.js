@@ -2,7 +2,7 @@ import ServiceCard from "../ui/ServiceCard";
 
 export default function ServiceList() {
   return (
-    <div className="flex-col space-y-8 pt-10">
+    <div className="flex flex-col space-y-8 lg:flex-row lg:space-x-16 lg:space-y-0 pt-10">
       <ServiceCard
         data-aos="fade-right"
         title={"Web Development"}

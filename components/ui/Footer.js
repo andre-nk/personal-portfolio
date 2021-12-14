@@ -8,8 +8,8 @@ export default function Footer() {
   const { showModal } = useContext(ModalContext);
 
   return (
-    <div className="w-full h-auto py-12 flex flex-col justify-center items-center bg-primary-black">
-      <div className="space-y-10 flex flex-col justify-center items-center">
+    <div className="w-full h-auto py-12 flex flex-col justify-center items-center bg-primary-black lg:justify-between lg:flex-row-reverse lg:px-12">
+      <div className="space-y-10 flex flex-col justify-center items-center lg:items-end">
         <Link href="/projects">
           <p className="text-white text-lg">Projects</p>
         </Link>
@@ -24,11 +24,13 @@ export default function Footer() {
           Contact Me
         </btn>
       </div>
-      <div className="mt-16">
-        <Image src="/images/logo_wide.png" width={180} height={42} />
+      <div className="flex flex-col lg:items-start items-center">
+        <div className="mt-16">
+          <Image src="/images/logo_wide.png" width={180} height={42} />
+        </div>
+        <p className="text-white pl-0 mt-3">Made with ❤️ from Indonesia</p>
+        <p className="text-white pl-0 mt-3">©2021</p>
       </div>
-      <p className="text-white pl-2 mt-3">Made with ❤️ from Indonesia</p>
-      <p className="text-white pl-2 mt-3">©2021</p>
     </div>
   );
 }

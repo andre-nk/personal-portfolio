@@ -2,7 +2,7 @@ import PlusPointCard from "../ui/PlusPointCard";
 
 export default function PlusPointList() {
   return (
-    <div className="mt-8 flex flex-col space-y-10">
+    <div className="mt-8 lg:mt-10 flex flex-col space-y-10 lg:grid lg:grid-cols-3 lg:space-y-0 gap-10">
       <PlusPointCard
         title={"100% into your project"}
         caption={
@@ -22,7 +22,7 @@ export default function PlusPointList() {
         }
       />
       <PlusPointCard
-        title={"High availability for client’s needs"}
+        title={"High availability"}
         caption={
           "I'll do my best to fullfill the client project and its additional needs / features"
         }

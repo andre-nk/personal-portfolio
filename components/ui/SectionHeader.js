@@ -1,8 +1,8 @@
 export default function SectionHeader({ title, subtitle }) {
   return (
-    <div className="pt-[96px]">
+    <div className="pt-[96px] lg:w-full lg:flex lg:flex-col lg:justify-center items-center">
       {subtitle && (
-        <h4 className="uppercase text-primary-black opacity-30 text-xs font-semibold">
+        <h4 className="uppercase lg:tracking-wider text-primary-black opacity-30 text-xs font-semibold">
           {subtitle}
         </h4>
       )}

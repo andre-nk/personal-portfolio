@@ -2,7 +2,7 @@ import ProjectCard from "../ui/ProjectCard";
 
 export default function ProjectList() {
   return (
-    <div className="flex-col space-y-8 pt-10">
+    <div className="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-16 pt-10">
       <ProjectCard
         slug={"handles"}
         title={"Handles"}

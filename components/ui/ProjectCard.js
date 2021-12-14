@@ -34,7 +34,7 @@ export default function ServiceCard({
             <span className="font-medium">{type}</span> · {parsedStartDate} -{" "}
             {parsedEndDate}
           </div>
-          <div className="w-5/12 h-[2px] bg-primary-black opacity-40" />
+          <div className="w-5/12 lg:w-2/12 h-[2px] bg-primary-black opacity-30" />
           <p className="text-[14px] pt-3 text-primary-black opacity-70">
             {caption}
           </p>

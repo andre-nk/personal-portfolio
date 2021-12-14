@@ -2,7 +2,7 @@ import PlusPointCard from "../ui/PlusPointCard";
 
 export default function ReviewList() {
   return (
-    <div className="mt-8 flex flex-col space-y-10">
+    <div className="mt-8 lg:mt-10 flex flex-col space-y-10 lg:grid lg:grid-cols-3 lg:gap-10 lg:space-y-0">
       <PlusPointCard
         title={"Douglas Simao"}
         caption={
@@ -10,7 +10,7 @@ export default function ReviewList() {
         }
       />
       <PlusPointCard
-        title={"Alexander Ziskind"}
+        title={"Alexander Leveriza"}
         caption={
           "Good communication. Fast replies. Accommodating to requests."
         }
