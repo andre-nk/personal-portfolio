@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import MainButton from "../components/ui/MainButton";
 import SectionHeader from "../components/ui/SectionHeader";
@@ -11,10 +11,12 @@ import ServiceList from "../components/layout/ServiceList";
 import ProjectList from "../components/layout/ProjectList";
 import PlusPointList from "../components/layout/PlusPointList";
 import ReviewList from "../components/layout/ReviewList";
+import ModalContext from "../context/ModalContext";
 
 export default function Home() {
   const router = useRouter();
   const [screenWidth, setScreenWidth] = useState(0);
+  const { showModal } = useContext(ModalContext);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -47,12 +49,17 @@ export default function Home() {
           users will love!
         </p>
         <div className="pt-[40px]">
-          <MainButton content="Let's talk" />
+          <MainButton
+            content="Let's talk"
+            onClick={() => {
+              showModal();
+            }}
+          />
         </div>
       </div>
       <div
         className="pt-16"
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="250"
       >
@@ -160,7 +167,12 @@ export default function Home() {
           hesitate to contact me down below! But, it will be great too if you
           just want say hello, you know?
         </p>
-        <MainButton content={"Get in touch!"} />
+        <MainButton
+          content={"Get in touch!"}
+          onClick={() => {
+            showModal();
+          }}
+        />
       </div>
     </div>
   );

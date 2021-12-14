@@ -1,40 +1,189 @@
-import Link from "next/link";
+import { useState, useContext } from "react";
+import { Dialog, Fragment, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { useState } from "react";
 
+import Footer from "../ui/Footer";
 import Drawer from "../navigation/Drawer";
+import ModalContext from "../../context/ModalContext";
 import NavigationBar from "../navigation/NavigationBar";
+import MainButton from "../ui/MainButton";
 
 export default function Layout(props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDrawerOpen, setDrawerIsOpen] = useState(false);
+  const { isModalOpen, hideModal } = useContext(ModalContext);
 
   return (
-    <div className="">
-      <Drawer isOpen={isOpen} setIsOpen={setIsOpen} />
+    <div>
+      <Drawer isOpen={isDrawerOpen} setIsOpen={setDrawerIsOpen} />
       <div className="sticky top-0 z-30 mt-4">
-        <NavigationBar setIsOpen={setIsOpen} />
+        <NavigationBar setIsOpen={setDrawerIsOpen} />
       </div>
       <div className="pb-8 pt-4">{props.children}</div>
-      <div className="w-full h-auto py-12 flex flex-col justify-center items-center bg-primary-black">
-        <div className="space-y-10 flex flex-col justify-center items-center">
-          <Link href="/projects">
-            <p className="text-white text-lg">Projects</p>
-          </Link>
-          <Link href="/services">
-            <p className="text-white text-lg">Services</p>
-          </Link>
-          <Link href="/about">
-            <p className="text-white text-lg">About Me</p>
-          </Link>
-          <p className="text-white text-lg">My Resume</p>
-          <p className="text-white text-lg">Contact Me</p>
-        </div>
-        <div className="mt-16">
-          <Image src="/images/logo_wide.png" width={180} height={42} />
-        </div>
-        <p className="text-white pl-2 mt-3">Made with  ❤️  from Indonesia</p>
-        <p className="text-white pl-2 mt-3">©2021</p>
-      </div>
+      <Footer />
+      <Transition appear show={isModalOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="fixed inset-0 overflow-y-auto z-50"
+          onClose={() => {
+            hideModal();
+          }}
+        >
+          <div className="min-h-screen max-w-full w-full flex items-center px-6 text-center">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Dialog.Overlay
+                onClick={() => {
+                  hideModal();
+                }}
+                className="fixed inset-0 bg-primary-black bg-opacity-40"
+              />
+            </Transition.Child>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <div className="flex flex-col justify-center max-w-full px-6 py-7 border-[3px] border-primary-black overflow-hidden text-left transition-all transform bg-white shadow-xl rounded-2xl">
+                <Dialog.Title
+                  as="div"
+                  className="flex justify-between items-center"
+                >
+                  <h3 className="text-[1.8rem] font-bold leading-tight">
+                    Let's connect
+                  </h3>
+                  <button
+                    onClick={() => {
+                      hideModal();
+                    }}
+                    className="outline-none pt-1.5"
+                  >
+                    <Image
+                      src="/icons/close.svg"
+                      height={36}
+                      width={36}
+                      alt="close"
+                    />
+                  </button>
+                </Dialog.Title>
+                <div className="mt-5 space-y-2.5">
+                  <p className="text-md text-primary-black">Your message:</p>
+                  <textarea
+                    name="message"
+                    id="message-contact"
+                    cols="30"
+                    rows="5"
+                    placeholder={`Hello Andre! \nI'm interested to work with you in...`}
+                    className="w-full outline-none border-2 border-primary-black border-opacity-30 rounded-xl p-4"
+                  ></textarea>
+                </div>
+                <div className="mt-3">
+                  <MainButton content="Shoot your message!" />
+                </div>
+                <div className="flex flex-col space-y-4">
+                  <p className="self-center mt-6">
+                    or... find me on these platforms:
+                  </p>
+                  <div className="grid grid-cols-3 px-7 pb-6 gap-8">
+                  <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    <div
+                      className="aspect-square bg-[#F1EFEC] rounded-lg flex justify-center items-center"
+                    >
+                      <Image
+                        src={`/icons/react.svg`}
+                        height={36}
+                        width={36}
+                      />
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </Transition.Child>
+          </div>
+        </Dialog>
+      </Transition>
     </div>
   );
 }

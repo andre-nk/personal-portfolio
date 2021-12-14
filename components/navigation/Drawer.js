@@ -1,7 +1,12 @@
-import DrawerLinks from "../navigation/DrawerLinks";
+import { useContext } from "react";
+
 import MainButton from "../ui/MainButton";
+import DrawerLinks from "../navigation/DrawerLinks";
+import ModalContext from "../../context/ModalContext";
 
 export default function Drawer({ isOpen, setIsOpen }) {
+  const { showModal } = useContext(ModalContext);
+
   return (
     <nav
       className={`fixed z-40 top-0 ${
@@ -24,12 +29,16 @@ export default function Drawer({ isOpen, setIsOpen }) {
           title={"About Me"}
           pathname={"/about"}
         />
-        <div className="h-[3.5px] w-3/12 mt-4 bg-primary-black bg-opacity-30">
-
-        </div>
+        <div className="h-[3.5px] w-3/12 mt-4 bg-primary-black bg-opacity-30"></div>
         <div className="space-y-6 mt-8">
           <MainButton content={"My Resume"} isInversed={true} />
-          <MainButton content={"Contact me"} />
+          <MainButton
+            content={"Contact me"}
+            onClick={() => {
+              setIsOpen(false);
+              showModal();
+            }}
+          />
         </div>
       </div>
       <div
