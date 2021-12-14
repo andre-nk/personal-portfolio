@@ -83,27 +83,27 @@ export default function Home() {
         />
         <ProjectList />
       </div>
-      <div
-        className="px-6"
-        data-aos="fade-up"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
-      >
-        <SectionHeader title={"About Me"} />
-      </div>
-      <div
-        className="pt-10"
-        data-aos="fade-up"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
-      >
-        <Image
-          src="/images/about_me_img.png"
-          width={screenWidth}
-          height={screenWidth * 0.9}
-        />
-      </div>
       <div>
+        <div
+          className="px-6"
+          data-aos="fade-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="250"
+        >
+          <SectionHeader title={"About Me"} />
+        </div>
+        <div
+          className="pt-10"
+          data-aos="fade-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="250"
+        >
+          <Image
+            src="/images/about_me_img.png"
+            width={screenWidth}
+            height={screenWidth * 0.9}
+          />
+        </div>
         <div className="px-8 pt-6 leading-loose text-lg relative inline-block space-y-1">
           <p>
             Hi again! My name is Andre. I'm an Indonesian full-stack web
@@ -131,36 +131,36 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="px-6">
-          <SectionHeader title={"But... why me?"} />
-          <p className="text-lg pt-4 leading-loose opacity-50">
-            As a solo practitioner, I'm always 100% into your project and with
-            my well-documented workflow, every collaboration with your existing
-            team like a breeze.
-          </p>
-          <PlusPointList />
-        </div>
-        <div className="px-6">
-          <SectionHeader title={"Don’t just take my words"} />
-          <p className="text-lg pt-4 leading-loose opacity-50">
-            I’m proud that across my freelancing career, I’ve met wonderful
-            people to work with and it’s a relieve that they absolutely love the
-            final output of my projects!
-          </p>
-          <ReviewList />
-        </div>
-        <div className="px-6 mb-24">
-          <SectionHeader
-            title={"Let's work together!"}
-            subtitle={"LIKE WHAT YOU SEE?"}
-          />
-          <p className="text-lg pt-4 leading-loose mb-8">
-            If you got anything in your mind about a brilliant app idea, don’t
-            hesitate to contact me down below! But, it will be great too if you
-            just want say hello, you know?
-          </p>
-          <MainButton content={"Get in touch!"} />
-        </div>
+      </div>
+      <div className="px-6">
+        <SectionHeader title={"But... why me?"} />
+        <p className="text-lg pt-4 leading-loose opacity-50">
+          As a solo practitioner, I'm always 100% into your project and with my
+          well-documented workflow, every collaboration with your existing team
+          like a breeze.
+        </p>
+        <PlusPointList />
+      </div>
+      <div className="px-6">
+        <SectionHeader title={"Don’t just take my words"} />
+        <p className="text-lg pt-4 leading-loose opacity-50">
+          I’m proud that across my freelancing career, I’ve met wonderful people
+          to work with and it’s a relieve that they absolutely love the final
+          output of my projects!
+        </p>
+        <ReviewList />
+      </div>
+      <div className="px-6 mb-24">
+        <SectionHeader
+          title={"Let's work together!"}
+          subtitle={"LIKE WHAT YOU SEE?"}
+        />
+        <p className="text-lg pt-4 leading-loose mb-8">
+          If you got anything in your mind about a brilliant app idea, don’t
+          hesitate to contact me down below! But, it will be great too if you
+          just want say hello, you know?
+        </p>
+        <MainButton content={"Get in touch!"} />
       </div>
     </div>
   );
