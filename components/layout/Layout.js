@@ -23,12 +23,12 @@ export default function Layout(props) {
       <Transition appear show={isModalOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 overflow-y-auto z-50"
+          className="fixed flex inset-0 overflow-y-auto z-50"
           onClose={() => {
             hideModal();
           }}
         >
-          <div className="min-h-screen max-w-full w-full flex items-center px-6 text-center">
+          <div className="max-w-full w-full self-center justify-center flex items-center px-6 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"

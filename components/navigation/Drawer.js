@@ -13,7 +13,7 @@ export default function Drawer({ isOpen, setIsOpen }) {
         isOpen ? "left-0" : "-left-full"
       } w-full flex duration-300`}
     >
-      <div className="w-10/12 px-8 py-16 bg-white backdrop-filter backdrop-blur-sm transition-shadow bg-opacity-90 shadow-zinc-700 drop-shadow-2xl h-screen">
+      <div className="w-10/12 md:w-7/12 px-8 py-16 bg-white backdrop-filter backdrop-blur-sm transition-shadow bg-opacity-90 shadow-zinc-700 drop-shadow-2xl h-screen">
         <DrawerLinks
           setIsOpen={setIsOpen}
           title={"Projects"}
@@ -42,7 +42,7 @@ export default function Drawer({ isOpen, setIsOpen }) {
         </div>
       </div>
       <div
-        className={`w-2/12`}
+        className={`w-2/12 md:w-5/12`}
         onClick={() => {
           setIsOpen(false);
         }}
