@@ -43,9 +43,7 @@ export default function AboutPage() {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="250"
       >
-        <img
-          src="/images/about_me_wide_img.png"
-        />
+        <img src="/images/about_me_wide_img.png" />
       </div>
       <div className="px-8 my-6 lg:mb-12 lg:px-48 leading-loose text-lg relative inline-block space-y-1">
         <p>

@@ -3,6 +3,7 @@ import "aos/dist/aos.css";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { createClient } from "contentful";
 import { useState, useEffect, useContext } from "react";
 
 import MainButton from "../components/ui/MainButton";
@@ -13,7 +14,7 @@ import PlusPointList from "../components/layout/PlusPointList";
 import ReviewList from "../components/layout/ReviewList";
 import ModalContext from "../context/ModalContext";
 
-export default function Home() {
+export default function Home(props) {
   const router = useRouter();
   const [screenWidth, setScreenWidth] = useState(0);
   const { showModal } = useContext(ModalContext);
@@ -28,6 +29,8 @@ export default function Home() {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  console.log(props);
 
   return (
     <div className="text-primary-black">
@@ -213,4 +216,21 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({
+    content_type: "project",
+  });
+
+  return {
+    props: {
+      projects: res.items[0]
+    }
+  }
 }
