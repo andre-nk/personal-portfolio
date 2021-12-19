@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 import moment from "moment";
 import Link from "next/link";
 import TechBadge from "./TechBadge";
 
 export default function ServiceCard({
   slug,
-  imageURL,
+  image,
   techstack,
   title,
   type,
@@ -19,16 +21,25 @@ export default function ServiceCard({
     <Link href={`/projects/${slug}`}>
       <div className="h-auto w-full space-y-4 bg-white hover:bg-hover-white bg-opacity-40 duration-200 rounded-xl">
         <div className="relative inline-block w-full">
-          {/* IMAGE URL HERE */}
-          <div className="w-full bg-gray-300 rounded-lg h-[11.25rem]" />
+          <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] object-cover overflow-hidden">
+            <Image
+              src={"https:" + image.url}
+              width={image.details.image.width}
+              height={
+                image.details.image.height <= 500
+                  ? image.details.image.height + image.details.image.height / 20
+                  : image.details.image.height
+              }
+            />
+          </div>
           <div className="px-3 absolute -bottom-[1.15rem] flex -space-x-2.5">
-            <TechBadge caption="" />
-            <TechBadge caption="" />
-            <TechBadge caption="" />
-            <TechBadge caption="2+" />
+            {techstack.map((tech) => {
+              const { file, title } = tech.fields;
+              return <TechBadge icon={file} title={title} key={title} />;
+            })}
           </div>
         </div>
-        <div className="space-y-1.5 px-4 pt-3 pb-6">
+        <div className="space-y-1.5 px-4 pt-4 pb-6">
           <h2 className="text-[22px] font-semibold">{title}</h2>
           <div className="text-[14px] pb-3">
             <span className="font-medium">{type}</span> · {parsedStartDate} -{" "}

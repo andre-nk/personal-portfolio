@@ -20,9 +20,9 @@ export default function Footer() {
           <p className="text-white text-lg">About Me</p>
         </Link>
         <p className="text-white text-lg">My Resume</p>
-        <btn onClick={showModal} className="text-white text-lg">
+        <button onClick={showModal} className="text-white text-lg">
           Contact Me
-        </btn>
+        </button>
       </div>
       <div className="flex flex-col lg:items-start items-center">
         <div className="mt-16">

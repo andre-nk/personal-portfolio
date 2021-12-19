@@ -18,7 +18,7 @@ export default function Layout(props) {
       <div className="sticky top-0 z-30 mt-4">
         <NavigationBar setIsOpen={setDrawerIsOpen} />
       </div>
-      <div className="pb-8 pt-4">{props.children}</div>
+      <div className="pb-8">{props.children}</div>
       <Footer />
       <Transition appear show={isModalOpen} as={Fragment}>
         <Dialog
