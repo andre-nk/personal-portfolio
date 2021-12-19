@@ -247,5 +247,6 @@ export async function getStaticProps() {
       reviews: reviewsRes.items,
       plusPoint: plusPointRes.items,
     },
+    revalidate: 60 * 5,
   };
 }

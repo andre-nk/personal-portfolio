@@ -1,11 +1,13 @@
 import Head from "next/head";
-import React, { useState, useRef } from "react";
+import { createClient } from "contentful";
+import React, { useEffect, useState } from "react";
 
 import ProjectList from "../../components/layout/ProjectList";
 import SearchBar from "../../components/ui/SearchBar";
 import SearchFilter from "../../components/ui/SearchFilter";
 
-export default function ProjectsPage() {
+export default function ProjectsPage({ client, projects }) {
+  const [queryProjects, setQueryProjects] = useState([]);
   const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
 
@@ -47,6 +49,14 @@ export default function ProjectsPage() {
     },
   ];
 
+  // useEffect(() => {
+  //   client
+  //     .getEntries({
+  //       query: "design",
+  //     })
+  //     .then((res) => res.items);
+  // }, [search]);
+
   return (
     <div>
       <Head>
@@ -70,8 +80,26 @@ export default function ProjectsPage() {
           selectedTags={selectedTags}
           setSelectedTags={setSelectedTags}
         />
-        <ProjectList />
+        <ProjectList projectRes={projects} />
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  });
+
+  const projectRes = await client.getEntries({
+    content_type: "project",
+  });
+
+  return {
+    props: {
+      projects: projectRes.items,
+    },
+    revalidate: 60 * 5,
+  };
 }
