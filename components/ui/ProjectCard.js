@@ -4,7 +4,7 @@ import moment from "moment";
 import Link from "next/link";
 import TechBadge from "./TechBadge";
 
-export default function ServiceCard({
+export default function ProjectCard({
   slug,
   image,
   techstack,
@@ -18,18 +18,15 @@ export default function ServiceCard({
   const parsedEndDate = moment(endDate).format("MMMM YYYY");
 
   return (
-    <Link href={`/projects/${slug}`}>
+    <Link href={`/projects/${slug}`} passHref>
       <div className="h-auto w-full space-y-4 bg-white hover:bg-hover-white bg-opacity-40 duration-200 rounded-xl">
         <div className="relative inline-block w-full">
-          <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] object-cover overflow-hidden">
+          <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] object-fill overflow-hidden">
             <Image
               src={"https:" + image.url}
+              alt="project_thumbnail"
               width={image.details.image.width}
-              height={
-                image.details.image.height <= 500
-                  ? image.details.image.height + image.details.image.height / 20
-                  : image.details.image.height
-              }
+              height={image.details.image.height}
             />
           </div>
           <div className="px-3 absolute -bottom-[1.15rem] flex -space-x-2.5">

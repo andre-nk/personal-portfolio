@@ -5,8 +5,8 @@ export default function DrawerLinks({ setIsOpen, title, pathname }) {
   const router = useRouter();
 
   return (
-    <Link href={pathname}>
-      <div className="flex space-x-4 items-center py-4">
+    <Link href={pathname} passHref>
+      <div className="flex space-x-4 items-center py-4 cursor-pointer">
         {router.pathname === pathname && (
           <div className="h-[5px] w-[5px] bg-[#E06259] rounded-full"></div>
         )}

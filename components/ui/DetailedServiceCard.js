@@ -11,9 +11,9 @@ export default function DetailedServiceCard({ title, description, techstack }) {
       </div>
       <div className="flex items-center space-x-4 mt-2">
         <div className="bg-[#E06259] flex-[0.2] lg:flex-[0.1] h-8 opacity-0" />
-        <div className="text-md leading-relaxed flex-[20]">{description}</div>
+        <div className="text-md leading-relaxed flex-[20] prose-md lg:prose-lg">{description}</div>
       </div>
-      <div className="flex items-center space-x-4 mt-4">
+      <div className="flex items-center space-x-4 mt-5">
         <div className="bg-[#E06259] flex-[0.2] lg:flex-[0.1] h-8 opacity-0" />
         <div className="flex gap-4 flex-wrap flex-[20]">
           {techstack.map((tech, index) => {
@@ -26,7 +26,7 @@ export default function DetailedServiceCard({ title, description, techstack }) {
                 data-tip={title}
                 className="p-2 pb-[3px] bg-[#F1EFEC] rounded-lg"
               >
-                <Image src={"https:" + file.url} height={28} width={28} />
+                <Image alt="service_thumbnail" src={"https:" + file.url} height={28} width={28} />
               </div>
             );
           })}

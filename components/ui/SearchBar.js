@@ -1,7 +1,11 @@
 export default function SearchBar({ search, setSearch }) {
   return (
     <input
-      onChange={(e) => setSearch(e.target.value)}
+      onChange={(e) => {
+        if(!(search.length > 60)){
+          setSearch(e.target.value);
+        }
+      }}
       type="text"
       placeholder="Search anything..."
       value={search}

@@ -48,8 +48,10 @@ export default function Home(props) {
           data-aos-easing="ease-out-cubic"
           data-aos-duration="500"
         >
-          <h2 className="text-[48px] font-bold pt-[24px]">Hi, I'm Andre!</h2>
-          <p className="text-[20px] pt-[16px]">
+          <h2 className="text-[48px] font-bold pt-[24px]">
+            {"Hi, I'm Andre!"}
+          </h2>
+          <p className="text-[20px] pt-[16px] prose">
             A fullstack web and mobile developer and a UI/UX enthusiast based in
             Indonesia. I craft production-grade website and mobile app that your
             users will love!
@@ -72,6 +74,7 @@ export default function Home(props) {
         >
           <Image
             src="/images/hero_img.png"
+            alt="hero_img"
             width={screenWidth}
             height={screenWidth * 0.95}
           />
@@ -93,7 +96,7 @@ export default function Home(props) {
           title={"Some of the best projects by me!"}
           subtitle={"FEATURED PROJECTS"}
         />
-        <ProjectList projectRes={props.projects} />
+        <ProjectList projectRes={props.projects} isLandingPage={true} />
       </div>
 
       <div className="lg:flex flex-row-reverse justify-between items-center lg:px-12 lg:mt-36">
@@ -103,8 +106,9 @@ export default function Home(props) {
         <div className="pt-10 lg:flex-[3.5]">
           <Image
             src={"https:" + props.aboutMe[0].fields.avatar.fields.file.url}
+            alt="about_me_avatar"
             width={screenWidth}
-            height={screenWidth * 0.925}
+            height={screenWidth * 0.9}
           />
         </div>
         <span className="hidden lg:block flex-[1]"></span>
@@ -115,13 +119,15 @@ export default function Home(props) {
             </h2>
           </div>
           <div>
-            {props.aboutMe[0].fields.aboutMe.content.slice(0, 2).map((item, index) => {
-              return (
-                <div key={index} className="pb-3">
-                  {documentToReactComponents(item)}
-                </div>
-              );
-            })}
+            {props.aboutMe[0].fields.aboutMe.content
+              .slice(0, 2)
+              .map((item, index) => {
+                return (
+                  <div key={index} className="pb-2 prose-md lg:prose-lg">
+                    {documentToReactComponents(item)}
+                  </div>
+                );
+              })}
           </div>
           <div className="lg:hidden w-full h-64 absolute left-0 bottom-[2.75px] bg-gradient-to-t from-white z-10" />
           <div className="z-30 hidden lg:block lg:pt-8 lg:w-5/12">
@@ -152,10 +158,10 @@ export default function Home(props) {
         <h2 className="hidden lg:block text-[2.5rem] font-bold pt-3 leading-tight">
           But... why me?
         </h2>
-        <p className="text-lg pt-4 leading-loose opacity-50 lg:w-[35vw]">
-          As a solo practitioner, I'm always 100% into your project and with my
-          well-documented workflow, every collaboration with your existing team
-          like a breeze.
+        <p className="text-lg pt-2 leading-loose opacity-50 lg:w-[35vw]">
+          {
+            "As a solo practitioner, I'm always 100% into your project and with my well-documented workflow, every collaboration with your existing team like a breeze."
+          }
         </p>
         <PlusPointList plusPointRes={props.plusPoint} />
       </div>

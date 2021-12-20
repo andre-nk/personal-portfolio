@@ -18,3 +18,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+b {
+  font-weight: 600;
+}

@@ -3,7 +3,7 @@ import PlusPointCard from "../ui/PlusPointCard";
 
 export default function ReviewList({ reviewRes }) {
   return (
-    <div className="mt-8 lg:mt-10 flex flex-col md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <div className="mt-8 lg:mt-10 flex flex-col md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
       {reviewRes.map((item) => {
         const { name, review } = item.fields;
         return (

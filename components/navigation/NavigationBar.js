@@ -13,12 +13,12 @@ export default function NavigationBar({ setIsOpen }) {
     <nav className="w-full h-[8vh] bg-white backdrop-filter backdrop-blur-sm bg-opacity-90 px-6 lg:px-12 py-[40px] flex justify-between items-center">
       <Link href="/">
         <a className="lg:hidden pt-1">
-          <Image src="/images/logo.png" height={50} width={50} />
+          <Image src="/images/logo.png" alt="logo" height={50} width={50} />
         </a>
       </Link>
       <Link href="/">
         <a className="hidden lg:block pt-1">
-          <Image src="/images/logo_wide_lg.png" height={50} width={200} />
+          <Image src="/images/logo_wide_lg.png" alt="logo_wide" height={50} width={200} />
         </a>
       </Link>
       <button

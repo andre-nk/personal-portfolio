@@ -28,7 +28,7 @@ export default function AboutPage({ aboutMeRes }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div
-        className="px-6 lg:px-48 lg: mt-16 lg:self-start"
+        className="px-6 lg:px-48 lg:mt-16 lg:self-start"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="250"
@@ -43,6 +43,7 @@ export default function AboutPage({ aboutMeRes }) {
       >
         <Image
           src={"https:" + avatar.fields.file.url}
+          alt="about_me_avatar"
           width={screenWidth}
           height={screenWidth * 0.93}
         />
@@ -53,17 +54,22 @@ export default function AboutPage({ aboutMeRes }) {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="250"
       >
-        <img src="/images/about_me_wide_img.png" />
+        <Image
+          src={"https:" + avatar.fields.file.url}
+          alt="about_me_avatar"
+          width={screenWidth}
+          height={screenWidth * 0.93}
+        />
       </div>
-      <div className="px-8 my-6 lg:mb-12 lg:px-48 leading-loose text-lg relative inline-block space-y-1">
+      <div className="px-8 my-6 lg:mb-12 lg:px-48 leading-loose text-lg relative flex flex-col space-y-1">
         {aboutMe.content.map((item, index) => {
           return (
-            <div key={index} className="pb-3 lg:pb-4">
+            <div key={index} className="pb-2 prose-md lg:prose-lg lg:pb-4">
               {documentToReactComponents(item)}
             </div>
           );
         })}
-        <div className="pt-8">
+        <div className="pt-8 lg:w-5/12 lg:self-center">
           <MainButton
             content="Let's talk"
             onClick={() => {
