@@ -244,6 +244,10 @@ export async function getStaticProps() {
     content_type: "plusPoint",
   });
 
+  const socialLinkRes = await client.getEntries({
+    content_type: "socialLink",
+  });
+
   return {
     props: {
       projects: projectRes.items,
@@ -251,6 +255,7 @@ export async function getStaticProps() {
       aboutMe: aboutMeRes.items,
       reviews: reviewsRes.items,
       plusPoint: plusPointRes.items,
+      socialLink: socialLinkRes.items
     },
     revalidate: 60 * 5,
   };
