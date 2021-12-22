@@ -72,3 +72,21 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.SPACE_ID,
+    accessToken: process.env.ACCESS_TOKEN,
+  });
+
+  const socialLinkRes = await client.getEntries({
+    content_type: "socialLink",
+  });
+
+  return {
+    props: {
+      socialLink: socialLinkRes.items,
+    },
+    revalidate: 60 * 5,
+  };
+}

@@ -1,12 +1,13 @@
 import Image from "next/image";
-import { useContext } from "react";
-import { Dialog, Fragment, Transition } from "@headlessui/react";
+import { useContext, useState, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 import MainButton from "../ui/MainButton";
 import ModalContext from "../../context/ModalContext";
 
 export default function ContactModal({ socialLink }) {
   const { isModalOpen, hideModal } = useContext(ModalContext);
+  const [messageBody, setMessageBody] = useState("");
 
   return (
     <Transition appear show={isModalOpen} as={Fragment}>
@@ -74,12 +75,23 @@ export default function ContactModal({ socialLink }) {
                       id="message-contact"
                       cols="30"
                       rows="5"
+                      value={messageBody}
+                      onChange={(e) => {
+                        e.preventDefault();
+                        setMessageBody(e.target.value);
+                      }}
                       placeholder={`Hello Andre! \nI'm interested to work with you in...`}
                       className="w-full outline-none border-2 border-primary-black border-opacity-30 rounded-xl p-4"
                     ></textarea>
                   </div>
                   <div className="mt-3">
-                    <MainButton content="Shoot your message!" />
+                    <a
+                      href={`mailto:andreasnotokusumo23@gmail.com?subject=Work and Collaboration Interest for Andreas N.&body=${messageBody}`}
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
+                      <MainButton content="Shoot your message!" />
+                    </a>
                   </div>
                 </div>
                 <div className="flex flex-col space-y-4 lg:flex-1">
@@ -94,9 +106,14 @@ export default function ContactModal({ socialLink }) {
                           window.open(link, "_blank");
                         }}
                         key={linkItem.sys.id}
-                        className={`w-full h-[56px] px-3.5 flex space-x-4 justify-start items-center lg:h-12 rounded-lg font-medium xl:whitespace-nowrap text-lg lg:px-8 duration-200 ${"bg-white text-primary-black hover:bg-hover-white border-[2.5px] border-primary-black"}`}
+                        className={`w-full py-3.5 px-3.5 flex space-x-4 justify-start items-center rounded-lg font-medium xl:whitespace-nowrap text-lg lg:px-8 duration-200 ${"bg-white text-primary-black hover:bg-hover-white border-[2.5px] border-primary-black"}`}
                       >
-                        <Image src={"https:" + linkIcon.fields.file.url} height={24} width={24} />
+                        <Image
+                          src={"https:" + linkIcon.fields.file.url}
+                          height={24}
+                          width={24}
+                          alt="social-icon"
+                        />
                         <p>{title}</p>
                       </button>
                     );

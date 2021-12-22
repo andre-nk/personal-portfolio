@@ -5,8 +5,6 @@ import DetailedServiceCard from "../../components/ui/DetailedServiceCard";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export default function ServicesPage({ services }) {
-  console.log(services);
-
   return (
     <div className="px-6 lg:px-12 my-12 lg:mt-0">
       <Head>
@@ -27,7 +25,6 @@ export default function ServicesPage({ services }) {
       <div className="mt-16 md:mb-16 flex flex-col md:grid md:grid-cols-2 md:space-y-0 gap-20">
         {services.map((service) => {
           const { title, description, techstacks } = service.fields;
-          console.log(service);
           return (
             <DetailedServiceCard
               key={service.sys.id}
@@ -52,9 +49,14 @@ export async function getStaticProps() {
     content_type: "services",
   });
 
+  const socialLinkRes = await client.getEntries({
+    content_type: "socialLink",
+  });
+
   return {
     props: {
       services: servicesRes.items,
+      socialLink: socialLinkRes.items
     },
     revalidate: 60 * 5,
   };

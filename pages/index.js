@@ -35,7 +35,10 @@ export default function Home(props) {
     <div className="text-primary-black">
       <Head>
         <title>Andreas Notokusumo</title>
-        <meta name="description" content="Fullstack Web Developer, Flutter Developer, and UI/UX Enthusiast based in Indonesia!" />
+        <meta
+          name="description"
+          content="Fullstack Web Developer, Flutter Developer, and UI/UX Enthusiast based in Indonesia!"
+        />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
@@ -112,7 +115,7 @@ export default function Home(props) {
         </div>
         <span className="hidden lg:block flex-[1]"></span>
         <div className="px-8 lg:px-0 pt-6 leading-loose text-lg relative inline-block space-y-1 lg:space-y-0 lg:flex lg:flex-[6] flex-col items-endtems-start">
-          <div className="hidden lg:block">
+          <div className="hidden lg:block lg:mb-4">
             <h2 className="text-[2.5rem] font-bold pt-3 leading-tight">
               About Me
             </h2>
@@ -180,38 +183,27 @@ export default function Home(props) {
         <ReviewList reviewRes={props.reviews} />
       </div>
 
-      <div className="px-6 lg:px-12 mb-24 lg:mt-36 lg:hidden">
-        <SectionHeader
-          title={"Let's work together!"}
-          subtitle={"LIKE WHAT YOU SEE?"}
-        />
+      <div className="px-6 lg:px-12 mb-24 lg:mt-36 lg:w-8/12 flex flex-col justify-start items-start">
+        <div className="pt-[96px] lg:w-full lg:flex lg:flex-col items-start">
+          <h4 className="uppercase tracking-wider text-primary-black opacity-30 text-xs font-semibold">
+            LIKE WHAT YOU SEE?
+          </h4>
+          <h2 className="text-[2.5rem] font-bold pt-3 leading-tight">
+            {"Let's work together!"}
+          </h2>
+        </div>
         <p className="text-lg pt-4 leading-loose mb-8">
           If you got anything in your mind about a brilliant app idea, don’t
           hesitate to contact me down below! But, it will be great too if you
           just want say hello, you know?
         </p>
-        <MainButton
-          content={"Get in touch!"}
-          onClick={() => {
-            showModal();
-          }}
-        />
-      </div>
-
-      <div className="hidden lg:flex px-12 lg:mx-12 py-12 mt-36 mb-8 bg-gray-400">
-        <div className="flex-[1.15]" />
-        <div className="flex-1">
-          <h2 className="hidden lg:block text-[2.5rem] font-bold leading-tight">
-            Like what you see?
-          </h2>
-          <p className="text-lg pt-4 pb-6 leading-loose opacity-50 lg:w-[35vw]">
-            Let’s work together! If you got anything in your mind about a
-            brilliant app idea, don’t hesitate to contact me down below! But, it
-            will be great too if you just want say hello, you know?
-          </p>
-          <div className="w-4/12">
-            <MainButton content="Get in touch" />
-          </div>
+        <div className="w-full lg:w-4/12">
+          <MainButton
+            content={"Get in touch!"}
+            onClick={() => {
+              showModal();
+            }}
+          />
         </div>
       </div>
     </div>
@@ -255,7 +247,7 @@ export async function getStaticProps() {
       aboutMe: aboutMeRes.items,
       reviews: reviewsRes.items,
       plusPoint: plusPointRes.items,
-      socialLink: socialLinkRes.items
+      socialLink: socialLinkRes.items,
     },
     revalidate: 60 * 5,
   };

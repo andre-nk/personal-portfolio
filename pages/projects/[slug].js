@@ -92,7 +92,7 @@ export default function ProjectDetailedPage({ project }) {
             referenceLinks && (
               Object.entries(referenceLinks).map((item, index) => {
                 return (
-                  <a target="_blank" href={item[1]} key={index} className="w-full">
+                  <a target="_blank" rel="noreferrer" href={item[1]} key={index} className="w-full">
                     <MainButton content={item[0]} isInversed={true} />
                   </a>
                 );
@@ -130,9 +130,14 @@ export async function getStaticProps({ params }) {
     "fields.slug": params.slug,
   });
 
+  const socialLinkRes = await client.getEntries({
+    content_type: "socialLink",
+  });
+
   return {
     props: {
       project: response.items[0],
+      socialLink: socialLinkRes.items
     },
   };
 }

@@ -18,8 +18,6 @@ export default function AboutPage({ aboutMeRes }) {
     }
   }, []);
 
-  console.log(aboutMe);
-
   return (
     <div className="lg:px-24 lg:flex lg:flex-col justify-center items-center">
       <Head>
@@ -91,9 +89,14 @@ export async function getStaticProps() {
 
   const aboutMeRes = await client.getEntry("3X92wZDerYF4NlXWewzZeZ");
 
+  const socialLinkRes = await client.getEntries({
+    content_type: "socialLink",
+  });
+
   return {
     props: {
       aboutMeRes: aboutMeRes,
+      socialLink: socialLinkRes.items
     },
     revalidate: 60 * 5,
   };
