@@ -7,9 +7,6 @@ import ModalContext from "../../context/ModalContext";
 
 export default function NavigationBar({ setIsOpen, resumeLink }) {
   const { showModal } = useContext(ModalContext);
-
-  console.log(resumeLink);
-
   return (
     <nav className="w-full h-[8vh] bg-white backdrop-filter backdrop-blur-sm bg-opacity-90 px-6 lg:px-12 py-[40px] flex justify-between items-center">
       <Link href="/">

@@ -92,6 +92,7 @@ export async function getStaticProps() {
 
   const socialLinkRes = await client.getEntries({
     content_type: "socialLink",
+    'sys.id[ne]': '6l995xa4s7NkEjERM3J4dH'
   });
 
   return {
