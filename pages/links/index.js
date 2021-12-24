@@ -44,15 +44,18 @@ export async function getStaticProps() {
     space: process.env.SPACE_ID,
     accessToken: process.env.ACCESS_TOKEN,
   });
+
   const socialLinkRes = await client.getEntries({
     content_type: "socialLink",
   });
-  
+
+  const resumeLinkRes = await client.getEntry("6l995xa4s7NkEjERM3J4dH");
 
   return {
     props: {
       socialLink: socialLinkRes.items,
-      socialLink: socialLinkRes.items
+      socialLink: socialLinkRes.items,
+      resumeLink: resumeLinkRes
     },
     revalidate: 60 * 5,
   };

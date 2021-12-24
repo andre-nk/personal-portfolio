@@ -88,6 +88,7 @@ export async function getStaticProps() {
   });
 
   const aboutMeRes = await client.getEntry("3X92wZDerYF4NlXWewzZeZ");
+  const resumeLinkRes = await client.getEntry("6l995xa4s7NkEjERM3J4dH");
 
   const socialLinkRes = await client.getEntries({
     content_type: "socialLink",
@@ -96,7 +97,8 @@ export async function getStaticProps() {
   return {
     props: {
       aboutMeRes: aboutMeRes,
-      socialLink: socialLinkRes.items
+      socialLink: socialLinkRes.items,
+      resumeLink: resumeLinkRes
     },
     revalidate: 60 * 5,
   };

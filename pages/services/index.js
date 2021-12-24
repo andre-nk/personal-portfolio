@@ -53,10 +53,13 @@ export async function getStaticProps() {
     content_type: "socialLink",
   });
 
+  const resumeLinkRes = await client.getEntry("6l995xa4s7NkEjERM3J4dH");
+
   return {
     props: {
       services: servicesRes.items,
-      socialLink: socialLinkRes.items
+      socialLink: socialLinkRes.items,
+      resumeLink: resumeLinkRes
     },
     revalidate: 60 * 5,
   };

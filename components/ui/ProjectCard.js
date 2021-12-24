@@ -19,7 +19,7 @@ export default function ProjectCard({
 
   return (
     <Link href={`/projects/${slug}`} passHref>
-      <div className="h-auto w-full space-y-4 bg-white hover:bg-hover-white bg-opacity-40 duration-200 rounded-xl">
+      <div className="cursor-pointer h-auto w-full space-y-4 bg-white hover:bg-hover-white bg-opacity-40 duration-200 rounded-xl">
         <div className="relative inline-block w-full">
           <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] object-fill overflow-hidden">
             <Image

@@ -134,10 +134,13 @@ export async function getStaticProps({ params }) {
     content_type: "socialLink",
   });
 
+  const resumeLinkRes = await client.getEntry("6l995xa4s7NkEjERM3J4dH");
+
   return {
     props: {
       project: response.items[0],
-      socialLink: socialLinkRes.items
+      socialLink: socialLinkRes.items,
+      resumeLink: resumeLinkRes
     },
   };
 }

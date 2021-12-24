@@ -5,9 +5,10 @@ import Link from "next/link";
 import MainButton from "../ui/MainButton";
 import ModalContext from "../../context/ModalContext";
 
-export default function NavigationBar({ setIsOpen }) {
-
+export default function NavigationBar({ setIsOpen, resumeLink }) {
   const { showModal } = useContext(ModalContext);
+
+  console.log(resumeLink);
 
   return (
     <nav className="w-full h-[8vh] bg-white backdrop-filter backdrop-blur-sm bg-opacity-90 px-6 lg:px-12 py-[40px] flex justify-between items-center">
@@ -18,7 +19,12 @@ export default function NavigationBar({ setIsOpen }) {
       </Link>
       <Link href="/">
         <a className="hidden lg:block pt-1">
-          <Image src="/images/logo_wide_lg.png" alt="logo_wide" height={50} width={200} />
+          <Image
+            src="/images/logo_wide_lg.png"
+            alt="logo_wide"
+            height={50}
+            width={200}
+          />
         </a>
       </Link>
       <button
@@ -38,7 +44,15 @@ export default function NavigationBar({ setIsOpen }) {
           <a className="text-lg">About Me</a>
         </Link>
         <div className="flex space-x-6">
-          <MainButton content={"Resume"} isInversed={true} />
+          <MainButton
+            content={"Resume"}
+            isInversed={true}
+            onClick={() => {
+              if(resumeLink){
+                window.open(resumeLink.fields.link, '_blank').focus();
+              }
+            }}
+          />
           <MainButton
             content={"Contact Me"}
             onClick={() => {
