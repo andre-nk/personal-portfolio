@@ -57,7 +57,7 @@ export default function ProjectDetailedPage({ project }) {
         </div>
       </div>
       <div className="relative inline-block w-full my-4">
-        <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] lg:h-auto lg:aspect-[21/9] object-cover overflow-hidden">
+        <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] lg:h-auto lg:aspect-[16/9] object-cover overflow-hidden">
           <Image
             src={"https:" + thumbnail.fields.file.url}
             alt="project_thumbnail"
@@ -120,7 +120,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -143,5 +143,6 @@ export async function getStaticProps({ params }) {
       socialLink: socialLinkRes.items,
       resumeLink: resumeLinkRes
     },
+    revalidate: 60 * 5,
   };
 }
