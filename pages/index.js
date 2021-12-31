@@ -92,7 +92,7 @@ export default function Home(props) {
       >
         <SectionHeader title={"What do I do?"} subtitle={"MY SERVICES"} />
         <ServiceList serviceRes={props.services} />
-        <Link href="/services" className="cursor-pointer">
+        <Link href="/services" className="cursor-pointer" passHref>
           <div className="cursor-pointer flex self-center mt-10 border-b hover:border-primary-black duration-200 pb-2 text-md space-x-2">
             <p>{"My services in detail"}</p>
             <p>{" ->"}</p>
@@ -111,7 +111,7 @@ export default function Home(props) {
           subtitle={"FEATURED PROJECTS"}
         />
         <ProjectList projectRes={props.projects} isLandingPage={true} />
-        <Link href="/projects" className="cursor-pointer">
+        <Link href="/projects" className="cursor-pointer" passHref>
           <div className="cursor-pointer flex self-center mt-6 border-b hover:border-primary-black duration-200 pb-2 text-md space-x-2">
             <p>{"Discover all of my projects here!"}</p>
             <p>{" ->"}</p>
