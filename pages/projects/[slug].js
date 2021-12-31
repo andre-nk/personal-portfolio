@@ -143,6 +143,6 @@ export async function getStaticProps({ params }) {
       socialLink: socialLinkRes.items,
       resumeLink: resumeLinkRes
     },
-    revalidate: 60 * 5,
+    revalidate: 10,
   };
 }
