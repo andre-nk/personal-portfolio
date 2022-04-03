@@ -55,9 +55,8 @@ export default function Home(props) {
             {"Hi, I'm Andre!"}
           </h2>
           <p className="text-[20px] pt-[16px] prose">
-            A fullstack web and mobile developer and a UI/UX enthusiast based in
-            Indonesia. I craft production-grade website and mobile app that your
-            users will love!
+            Web Developer, Flutter Developer and UI/UX Enthusiast based in Indonesia.
+            Actively crafting production-grade apps while pursuing computer science major!
           </p>
           <div className="pt-[40px] w-full lg:w-3/12">
             <MainButton
