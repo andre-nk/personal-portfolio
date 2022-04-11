@@ -11,7 +11,7 @@ export default function LinkPage({ socialLink }) {
         </a>
       </Link>
       <h3 className="text-2xl font-semibold mt-4 flex">
-        fullstack <p className="font-normal">.dre</p>
+        andre <p className="font-normal">nk</p>
       </h3>
       <div className="flex flex-col w-full md:w-8/12 lg:w-5/12 space-y-4 mt-12">
         {socialLink.map((linkItem) => {

@@ -20,7 +20,7 @@ export default function NavigationBar({ setIsOpen, resumeLink }) {
             src="/images/logo_wide_lg.png"
             alt="logo_wide"
             height={50}
-            width={200}
+            width={150}
           />
         </a>
       </Link>

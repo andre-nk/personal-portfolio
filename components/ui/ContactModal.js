@@ -13,7 +13,7 @@ export default function ContactModal({ socialLink }) {
     <Transition appear show={isModalOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed max-h-full flex inset-0 overflow-y-auto z-50"
+        className="fixed max-h-full w-full flex inset-0 overflow-y-auto z-50"
         onClose={() => {
           hideModal();
         }}
@@ -44,7 +44,7 @@ export default function ContactModal({ socialLink }) {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="max-w-full p-8 border-[3px] border-primary-black overflow-hidden text-left transition-all transform bg-white shadow-xl rounded-2xl">
+            <div className="fixed z-50 w-[88.5%] lg:w-8/12 h-[92.5%] lg:h-[85%] m-2 lg:m-12 p-8 border-[3px] border-primary-black overflow-hidden text-left transition-all transform bg-white shadow-xl rounded-2xl">
               <Dialog.Title
                 as="div"
                 className="flex flex-1 justify-between items-center lg:mb-2"
@@ -81,7 +81,7 @@ export default function ContactModal({ socialLink }) {
                         setMessageBody(e.target.value);
                       }}
                       placeholder={`Hello Andre! \nI'm interested to work with you in...`}
-                      className="w-full outline-none border-2 border-primary-black border-opacity-30 rounded-xl p-4"
+                      className="w-full resize-none outline-none border-2 border-primary-black border-opacity-30 rounded-xl p-4"
                     ></textarea>
                   </div>
                   <div className="mt-3">
@@ -94,7 +94,7 @@ export default function ContactModal({ socialLink }) {
                     </a>
                   </div>
                 </div>
-                <div className="flex flex-col space-y-4 lg:flex-1">
+                <div className="flex flex-col space-y-4 lg:flex-1 h-[450px] overflow-y-auto">
                   <p className="self-center mt-6">
                     or... find me on these platforms:
                   </p>
@@ -106,7 +106,7 @@ export default function ContactModal({ socialLink }) {
                           window.open(link, "_blank");
                         }}
                         key={linkItem.sys.id}
-                        className={`w-full py-3.5 px-3.5 flex space-x-4 justify-start items-center rounded-lg font-medium xl:whitespace-nowrap text-lg lg:px-8 duration-200 ${"bg-white text-primary-black hover:bg-hover-white border-[2.5px] border-primary-black"}`}
+                        className={`w-full py-3.5 px-3.5 flex space-x-4 justify-start items-center rounded-lg font-medium xl:whitespace-nowrap text-lg lg:px-4 duration-200 ${"bg-white text-primary-black hover:bg-hover-white border-[2.5px] border-primary-black"}`}
                       >
                         <Image
                           src={"https:" + linkIcon.fields.file.url}

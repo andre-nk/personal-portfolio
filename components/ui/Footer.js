@@ -26,10 +26,10 @@ export default function Footer() {
       </div>
       <div className="flex flex-col lg:items-start items-center">
         <div className="mt-16">
-          <Image src="/images/logo_wide.png" alt="logo_wide" width={180} height={42} />
+          <Image src="/images/logo_wide_white.png" alt="logo_wide" width={125} height={42} />
         </div>
         <p className="text-white pl-0 mt-3">Made with ❤️ from Indonesia</p>
-        <p className="text-white pl-0 mt-3">©2021</p>
+        <p className="text-white pl-0 mt-3">©2022</p>
       </div>
     </div>
   );
