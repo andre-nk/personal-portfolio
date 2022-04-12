@@ -72,7 +72,7 @@ export default function Home(props) {
           className="pt-16 lg:flex-[4] aspect-square"
           data-aos="fade-up"
           data-aos-easing="ease-out-cubic"
-          data-aos-duration="250"
+          data-aos-duration="150"
         >
           <Image
             src="/images/hero_img.png"
@@ -87,7 +87,7 @@ export default function Home(props) {
         className="px-6 lg:px-12 lg:mt-36 flex flex-col justify-center"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
+        data-aos-duration="150"
       >
         <SectionHeader title={"What do I do?"} subtitle={"MY SERVICES"} />
         <ServiceList serviceRes={props.services} />
@@ -103,7 +103,7 @@ export default function Home(props) {
         className="px-6 lg:px-12 lg:mt-32 flex flex-col justify-center"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
+        data-aos-duration="150"
       >
         <SectionHeader
           title={"Some of the best projects by me!"}

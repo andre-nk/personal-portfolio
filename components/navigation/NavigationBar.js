@@ -31,6 +31,12 @@ export default function NavigationBar({ setIsOpen, resumeLink }) {
         Menu
       </button>
       <div className="hidden lg:flex items-center space-x-12">
+        <Link href="https://andrenk.hashnode.dev/">
+          <div className="flex space-x-3 justify-center items-center cursor-pointer">
+            <Image src="/images/hashnode_logo.png" height={20} width={20} />
+            <a className="text-lg">Articles</a>
+          </div>
+        </Link>
         <Link href="/projects">
           <a className="text-lg">Projects</a>
         </Link>
@@ -45,8 +51,8 @@ export default function NavigationBar({ setIsOpen, resumeLink }) {
             content={"Resume"}
             isInversed={true}
             onClick={() => {
-              if(resumeLink){
-                window.open(resumeLink.fields.link, '_blank').focus();
+              if (resumeLink) {
+                window.open(resumeLink.fields.link, "_blank").focus();
               }
             }}
           />

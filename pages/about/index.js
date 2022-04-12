@@ -30,7 +30,7 @@ export default function AboutPage({ aboutMeRes }) {
         className="px-6 lg:px-48 lg:mt-16 lg:self-start"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
+        data-aos-duration="150"
       >
         <h2 className="text-[2.5rem] font-bold leading-tight">{"About Me"}</h2>
       </div>
@@ -38,7 +38,7 @@ export default function AboutPage({ aboutMeRes }) {
         className="pt-10 lg:hidden"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
+        data-aos-duration="150"
       >
         <Image
           src={"https:" + avatar.fields.file.url}
@@ -51,7 +51,7 @@ export default function AboutPage({ aboutMeRes }) {
         className="mt-10 lg:my-16 hidden lg:block w-11/12"
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
-        data-aos-duration="250"
+        data-aos-duration="150"
       >
         <Image
           src={"https:" + avatar.fields.file.url}
