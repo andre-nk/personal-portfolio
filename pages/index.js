@@ -172,21 +172,6 @@ export default function Home(props) {
 
       <div className="px-6 lg:px-12 lg:mt-40">
         <div className="lg:hidden">
-          <SectionHeader title={"But... why me?"} />
-        </div>
-        <h2 className="hidden lg:block text-[2.5rem] font-bold pt-3 leading-tight">
-          But... why me?
-        </h2>
-        <p className="text-lg pt-2 leading-loose opacity-50 lg:w-[35vw]">
-          {
-            "As a solo practitioner, I'm always 100% into your project and with my well-documented workflow, every collaboration with your existing team like a breeze."
-          }
-        </p>
-        <PlusPointList plusPointRes={props.plusPoint} />
-      </div>
-
-      <div className="px-6 lg:px-12 lg:mt-40">
-        <div className="lg:hidden">
           <SectionHeader title={"Don’t just take my words"} />
         </div>
         <h2 className="hidden lg:block text-[2.5rem] font-bold pt-3 leading-tight">
@@ -249,10 +234,6 @@ export async function getStaticProps() {
     content_type: "reviews",
   });
 
-  const plusPointRes = await client.getEntries({
-    content_type: "plusPoint",
-  });
-
   const socialLinkRes = await client.getEntries({
     content_type: "socialLink",
     'sys.id[ne]': '6l995xa4s7NkEjERM3J4dH'
@@ -266,7 +247,6 @@ export async function getStaticProps() {
       services: servicesRes.items,
       aboutMe: aboutMeRes.items,
       reviews: reviewsRes.items,
-      plusPoint: plusPointRes.items,
       socialLink: socialLinkRes.items,
       resumeLink: resumeLinkRes
     },
