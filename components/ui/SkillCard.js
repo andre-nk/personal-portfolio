@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ServiceCard({ image, title, caption }) {
+export default function SkillCard({ image, title, caption }) {
   return (
-    <Link href="/services" passHref>
+    <Link href="/skills" passHref>
       <div className="cursor-pointer h-auto w-full space-y-4 hover:bg-hover-white duration-200 rounded-lg">
         <div className="w-full bg-gray-300 rounded-lg h-[11.25rem] object-fill overflow-hidden">
           <Image

@@ -24,7 +24,7 @@ export default function Layout(props) {
 
   return (
     <div>
-      <Drawer isOpen={isDrawerOpen} setIsOpen={setDrawerIsOpen} />
+      <Drawer isOpen={isDrawerOpen} setIsOpen={setDrawerIsOpen} resumeLink={resumeLink} />
       <div className="sticky top-0 z-30 mt-4">
         <NavigationBar setIsOpen={setDrawerIsOpen} resumeLink={resumeLink} />
       </div>

@@ -1,4 +1,4 @@
-export default function PlusPointCard({title, caption}) {
+export default function ReviewCard({title, caption}) {
   return (
     <div className="flex-col">
       <div className="flex items-center space-x-4">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ReactTooltip from "react-tooltip";
 
-export default function DetailedServiceCard({ title, description, techstack }) {
+export default function DetailedSkillCard({ title, caption, techstack }) {
   return (
     <div className="flex-col">
       <ReactTooltip type="dark" effect="float" place="bottom" className="rounded-lg bg-primary-black bg-opacity-30 text-white capitalize" />
@@ -11,7 +11,7 @@ export default function DetailedServiceCard({ title, description, techstack }) {
       </div>
       <div className="flex items-center space-x-4 mt-2">
         <div className="bg-[#E06259] flex-[0.2] lg:flex-[0.1] h-8 opacity-0" />
-        <div className="text-md leading-relaxed flex-[20] prose-md lg:prose-lg">{description}</div>
+        <div className="text-md leading-relaxed flex-[20] prose-md lg:prose-lg">{caption}</div>
       </div>
       <div className="flex items-center space-x-4 mt-5">
         <div className="bg-[#E06259] flex-[0.2] lg:flex-[0.1] h-8 opacity-0" />

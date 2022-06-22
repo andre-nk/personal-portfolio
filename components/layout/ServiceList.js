@@ -1,6 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-import ServiceCard from "../ui/ServiceCard";
+import ServiceCard from "../ui/SkillCard";
 
 export default function ServiceList(props) {
 

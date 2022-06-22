@@ -11,7 +11,6 @@ import MainButton from "../components/ui/MainButton";
 import SectionHeader from "../components/ui/SectionHeader";
 import ServiceList from "../components/layout/ServiceList";
 import ProjectList from "../components/layout/ProjectList";
-import PlusPointList from "../components/layout/PlusPointList";
 import ReviewList from "../components/layout/ReviewList";
 import ModalContext from "../context/ModalContext";
 import Link from "next/link";
@@ -55,7 +54,7 @@ export default function Home(props) {
             {"Hi, I'm Andre!"}
           </h2>
           <p className="text-[20px] pt-[16px] prose">
-            Web Developer, Flutter Developer and UI/UX Enthusiast based in Indonesia.
+            Mobile Developer (Flutter and Android), React Developer and UI/UX Enthusiast based in Indonesia.
             Actively crafting production-grade apps while pursuing computer science major!
           </p>
           <div className="pt-[40px] w-full lg:w-3/12">
@@ -89,11 +88,11 @@ export default function Home(props) {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="150"
       >
-        <SectionHeader title={"What do I do?"} subtitle={"MY SERVICES"} />
+        <SectionHeader title={"What do I do?"} subtitle={"RELEVANT SKILLS"} />
         <ServiceList serviceRes={props.services} />
-        <Link href="/services" className="cursor-pointer" passHref>
+        <Link href="/skills" className="cursor-pointer" passHref>
           <div className="cursor-pointer flex self-center mt-10 border-b hover:border-primary-black duration-200 pb-2 text-md space-x-2">
-            <p>{"My services in detail"}</p>
+            <p>{"My skills in detail"}</p>
             <p>{" ->"}</p>
           </div>
         </Link>
@@ -218,7 +217,7 @@ export async function getStaticProps() {
     accessToken: process.env.ACCESS_TOKEN,
   });
 
-  const servicesRes = await client.getEntries({
+  const skillsRes = await client.getEntries({
     content_type: "services",
   });
 
@@ -244,7 +243,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects: projectRes.items,
-      services: servicesRes.items,
+      services: skillsRes.items,
       aboutMe: aboutMeRes.items,
       reviews: reviewsRes.items,
       socialLink: socialLinkRes.items,

@@ -13,8 +13,8 @@ export default function Footer() {
         <Link href="/projects" passHref>
           <p className="text-white text-lg cursor-pointer">Projects</p>
         </Link>
-        <Link href="/services" passHref>
-          <p className="text-white text-lg cursor-pointer">Services</p>
+        <Link href="/skills" passHref>
+          <p className="text-white text-lg cursor-pointer">Skills</p>
         </Link>
         <Link href="/about" passHref>
           <p className="text-white text-lg cursor-pointer">About Me</p>

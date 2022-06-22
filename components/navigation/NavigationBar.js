@@ -40,8 +40,8 @@ export default function NavigationBar({ setIsOpen, resumeLink }) {
         <Link href="/projects">
           <a className="text-lg">Projects</a>
         </Link>
-        <Link href="/services">
-          <a className="text-lg">Services</a>
+        <Link href="/skills">
+          <a className="text-lg">Skills</a>
         </Link>
         <Link href="/about">
           <a className="text-lg">About Me</a>

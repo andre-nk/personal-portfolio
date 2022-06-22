@@ -1,5 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import PlusPointCard from "../ui/PlusPointCard";
+import ReviewCard from "../ui/ReviewCard";
 
 export default function ReviewList({ reviewRes }) {
   return (
@@ -7,7 +7,7 @@ export default function ReviewList({ reviewRes }) {
       {reviewRes.map((item) => {
         const { name, review } = item.fields;
         return (
-          <PlusPointCard
+          <ReviewCard
             key={item.sys.id}
             title={name}
             caption={documentToReactComponents(review)}

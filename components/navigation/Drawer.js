@@ -4,7 +4,7 @@ import MainButton from "../ui/MainButton";
 import DrawerLinks from "../navigation/DrawerLinks";
 import ModalContext from "../../context/ModalContext";
 
-export default function Drawer({ isOpen, setIsOpen }) {
+export default function Drawer({ isOpen, setIsOpen, resumeLink }) {
   const { showModal } = useContext(ModalContext);
 
   return (
@@ -14,9 +14,13 @@ export default function Drawer({ isOpen, setIsOpen }) {
       } w-full flex duration-300`}
     >
       <div className="w-10/12 md:w-7/12 px-8 py-16 bg-white backdrop-filter backdrop-blur-sm transition-shadow bg-opacity-90 shadow-zinc-700 drop-shadow-2xl h-screen">
-        <DrawerLinks setIsOpen={() => {
-          window.open("https://andrenk.hashnode.dev/");
-        }} title={"Articles"} pathname={""} />
+        <DrawerLinks
+          setIsOpen={() => {
+            window.open("https://andrenk.hashnode.dev/");
+          }}
+          title={"Articles"}
+          pathname={""}
+        />
         <DrawerLinks
           setIsOpen={setIsOpen}
           title={"Projects"}
@@ -24,8 +28,8 @@ export default function Drawer({ isOpen, setIsOpen }) {
         />
         <DrawerLinks
           setIsOpen={setIsOpen}
-          title={"Services"}
-          pathname={"/services"}
+          title={"Skills"}
+          pathname={"/skills"}
         />
         <DrawerLinks
           setIsOpen={setIsOpen}
@@ -34,7 +38,15 @@ export default function Drawer({ isOpen, setIsOpen }) {
         />
         <div className="h-[3.5px] w-3/12 mt-4 bg-primary-black bg-opacity-30"></div>
         <div className="space-y-6 mt-8">
-          <MainButton content={"My Resume"} isInversed={true} />
+          <MainButton
+            content={"My Resume"}
+            isInversed={true}
+            onClick={() => {
+              if(resumeLink){
+                window.open(resumeLink.fields.link, "_blank").focus();
+              }
+            }}
+          />
           <MainButton
             content={"Contact me"}
             onClick={() => {
